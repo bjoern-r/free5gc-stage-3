@@ -115,7 +115,9 @@ There are no gNB and UE for standalone 5GC available in the market yet.
     sudo make install
     ```
 3. Enter the UPF directory
-    ```cd $GOPATH/src/free5gc/src/upf```
+    ```bash
+    cd $GOPATH/src/free5gc/src/upf
+    ``` 
 3a. fix libgtp5gnl
     ```bash
     cd cd $GOPATH/src/free5gc/src/upf/lib
