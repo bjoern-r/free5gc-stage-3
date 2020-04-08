@@ -65,7 +65,7 @@ There are no gNB and UE for standalone 5GC available in the market yet.
 3. Clone free5GC project in `$GOPATH/src`
     ```bash
     cd $GOPATH/src
-    git clone https://bitbucket.org/free5GC/free5gc-stage-2.git free5gc
+    git clone https://bitbucket.org/bjoern-r/free5gc-stage-3.git free5gc
     ```
 4. Run the script to install dependent packages
     ```bash
@@ -101,7 +101,7 @@ There are no gNB and UE for standalone 5GC available in the market yet.
     sudo apt -y install git gcc cmake autoconf libtool pkg-config libmnl-dev libyaml-dev
     go get -u github.com/sirupsen/logrus
     ```
-2. Please check Linux kernel version if it is 5.0.0-23-generic
+2. Please check Linux kernel version if it is greater 5.0.0-23-generic
     ```bash
     uname -r
     ```
@@ -116,8 +116,17 @@ There are no gNB and UE for standalone 5GC available in the market yet.
     ```
 3. Enter the UPF directory
     ```cd $GOPATH/src/free5gc/src/upf```
+3a. fix libgtp5gnl
+    ```bash
+    cd cd $GOPATH/src/free5gc/src/upf/lib
+    mv libgtp5gnl libgtp5gnl_old
+    git clone https://github.com/PrinzOwO/libgtp5gnl.git
+    cd libgtp5gnl 
+    autoreconf -iv
+    ```
 4. Build from sources
     ```bash
+    cd $GOPATH/src/free5gc/src/upf
     mkdir build
     cd build
     cmake ..
