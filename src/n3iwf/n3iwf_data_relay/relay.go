@@ -58,7 +58,7 @@ func ListenN1UPTraffic() error {
 
 	// Setup raw socket
 	// This raw socket will only capture GRE encapsulated packet
-	connection, err := net.ListenPacket("ip4:gre", listenAddr)
+	connection, err := net.ListenPacket("ip4:47", listenAddr)
 	if err != nil {
 		relayLog.Errorf("Error setting listen socket on %s: %+v", listenAddr, err)
 		return errors.New("ListenPacket failed")
